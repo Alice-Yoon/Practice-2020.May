@@ -7,6 +7,8 @@ const blueBtn = document.getElementById('blue');
 const yellowBtn = document.getElementById('yellow');
 const pinkBtn = document.getElementById('pink');
 
+const logo = document.getElementById('logo');
+
 let listEl = document.getElementById('list');
 
 // Clothes data
@@ -19,13 +21,6 @@ const clothesData = [
         size: "large size"
     },
     {
-        img: './imgs/blue_s.png',
-        color: "blue",
-        sort: "skirts",
-        gender: "female",
-        size: "small size"
-    },
-    {
         img: './imgs/blue_t.png',
         color: "blue",
         sort: "t-shirts",
@@ -36,6 +31,13 @@ const clothesData = [
         img: './imgs/pink_p.png',
         color: "pink",
         sort: "pants",
+        gender: "female",
+        size: "small size"
+    },
+    {
+        img: './imgs/blue_s.png',
+        color: "blue",
+        sort: "skirts",
         gender: "female",
         size: "small size"
     },
@@ -137,6 +139,7 @@ function paintList(item){
 
 // Display the whole list to DOM
 function wholeList() {
+    listEl.innerHTML = "";
 
     clothesData.forEach(item => {
         paintList(item);
@@ -184,3 +187,5 @@ tShirtsBtn.addEventListener('click', sortByType);
 blueBtn.addEventListener('click', sortByColor);
 yellowBtn.addEventListener('click', sortByColor);
 pinkBtn.addEventListener('click', sortByColor);
+
+logo.addEventListener('click', wholeList);

@@ -98,3 +98,11 @@ img:not(#logo) {
 .section li img {
     margin-right: 15px;
 }
+
+/* Media */
+@media (max-width: 550px) {
+    .button {
+        font-size: 13px;
+        padding: 10px;
+    }
+}
